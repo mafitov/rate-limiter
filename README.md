@@ -1,15 +1,15 @@
-## Rate Limit Checker
+# Rate Limit Checker
 
 A Spring Boot application that implements **rate limiting** using the **Token Bucket Algorithm**.
 This service allows controlling request rates per client (e.g., per IP address) to prevent abuse and ensure fair resource usage.
 
-### Overview
+## Overview
 
 The **Token Bucket Algorithm** provides a flexible and efficient rate-limiting mechanism.
 Each client (identified by IP or key) has a "bucket" that fills with tokens at a fixed rate.
 Every request consumes one token. When the bucket is empty, further requests are rejected until new tokens are added.
 
-### Features
+## Features
 
 * Rate limiting per IP (or configurable key)
 * Adjustable token refill rate and bucket size
@@ -17,7 +17,7 @@ Every request consumes one token. When the bucket is empty, further requests are
 * Logging of remaining request limits
 * Built with **Spring Boot** and **Java Streams**
 
-### How It Works
+## How It Works
 
 1. Each incoming request is identified by the client IP.
 2. The system checks the client’s token bucket:
@@ -26,14 +26,14 @@ Every request consumes one token. When the bucket is empty, further requests are
     * If no tokens remain → request is rejected (HTTP 429).
 3. Tokens are replenished over time at the configured rate.
 
-### Technologies Used
+## Technologies Used
 
 * **Java 21+**
 * **Spring Boot 3+**
 * **Maven**
 * **Slf4j / Logback** for logging
 
-### Configuration
+## Configuration
 
 You can adjust rate-limiting parameters in `application.yml`:
 
@@ -43,7 +43,7 @@ app:
   refillInterval: 60000 # time between token refills
 ```
 
-### Running the Application
+## Running the Application
 
 ```bash
 mvn clean install
