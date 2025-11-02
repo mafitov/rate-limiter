@@ -3,4 +3,4 @@ server:
 
 app:
     rateLimit: 10
-    refillInterval: 60000
+    resetInterval: 60000

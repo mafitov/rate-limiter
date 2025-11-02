@@ -39,8 +39,8 @@ You can adjust rate-limiting parameters in `application.yml`:
 
 ```yaml
 app:
-  rateLimit: 100 # max tokens per bucket
-  refillInterval: 60000 # time between token refills
+  rateLimit: 10 # max tokens per bucket
+  resetInterval: 60000 # time between token reset
 ```
 
 ## Running the Application
